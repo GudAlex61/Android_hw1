@@ -1,0 +1,5 @@
+<resources>
+    <color name="color_even">#FF5252</color>
+    <color name="color_odd">#2196F3</color>
+    <color name="color_fab">#FF4081</color>
+</resources>
