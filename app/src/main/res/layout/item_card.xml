@@ -10,7 +10,6 @@
     app:cardCornerRadius="@dimen/card_corner_radius"
     app:cardElevation="4dp">
 
-    <!-- Используем FrameLayout для надёжного центрирования -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

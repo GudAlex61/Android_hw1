@@ -1,16 +1,10 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.content.res.Configuration
-import android.view.LayoutInflater
-import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -79,12 +73,10 @@ class MainActivity : AppCompatActivity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
 
-        // Полностью пересоздаём RecyclerView при смене ориентации
         val spanCount = getColumnCount()
         val layoutManager = GridLayoutManager(this, spanCount)
         recyclerView.layoutManager = layoutManager
 
-        // Принудительно обновляем все элементы
         adapter.notifyDataSetChanged()
     }
 }

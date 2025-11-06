@@ -27,7 +27,6 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(items[position])
 
-        // Исправляем установку квадратной формы
         holder.itemView.post {
             val width = holder.itemView.width
             if (width > 0) {
@@ -45,7 +44,6 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
         private val numberText: TextView = itemView.findViewById(R.id.numberText)
 
         fun bind(number: Int) {
-            // Убеждаемся, что текст устанавливается и виден
             numberText.text = number.toString()
             numberText.setTextColor(ContextCompat.getColor(itemView.context, android.R.color.white))
 
