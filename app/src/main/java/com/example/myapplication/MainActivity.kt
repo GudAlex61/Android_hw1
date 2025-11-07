@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        adapter = CardsAdapter()
+        adapter = CardsAdapter { removeLastItem() }
 
         val spanCount = getColumnCount()
         val layoutManager = GridLayoutManager(this, spanCount)
@@ -63,6 +63,13 @@ class MainActivity : AppCompatActivity() {
     private fun addNewItem() {
         items.add(items.size)
         adapter.updateItems(items)
+    }
+
+    private fun removeLastItem() {
+        if (items.isNotEmpty()) {
+            items.removeAt(items.size - 1)
+            adapter.updateItems(items)
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
